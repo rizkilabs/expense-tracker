@@ -156,7 +156,7 @@ expense-tracker/
 
 ## 🧑‍💻 Author
 
-**Mochamad Rizki** – [rizkilabs.com](https://rizkilabs.com)
+**Mochamad Rizki** – [rizkilabs.com](https://rizkilabs.com)<br>
 LinkedIn: [linkedin.com/in/rizkilabs](https://linkedin.com/in/rizkilabs)
 
 ---
