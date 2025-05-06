@@ -2,8 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const { readData } = require('../utils/data');
 
-function exportToCSV(filename = 'expenses.csv') {
-  const expenses = readData();
+function exportToCSV(filename = 'expenses.csv', month = null) {
+  let expenses = readData();
+
+  if (month) {
+    expenses = expenses.filter(e => e.date.startsWith(month));
+  }
 
   if (expenses.length === 0) {
     console.log("No expenses to export.");

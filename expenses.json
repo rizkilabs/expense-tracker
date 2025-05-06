@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "date": "2025-05-06",
+    "date": "2025-04-06",
     "description": "Lunch",
     "amount": 10,
     "category": "Food"
   },
   {
     "id": 2,
-    "date": "2025-05-06",
+    "date": "2025-04-06",
     "description": "Lunch",
     "amount": 10,
     "category": "Food"
@@ -29,7 +29,7 @@
   },
   {
     "id": 5,
-    "date": "2025-05-06",
+    "date": "2025-06-06",
     "description": "Snacks",
     "amount": 60,
     "category": "Food"

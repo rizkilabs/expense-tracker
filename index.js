@@ -58,8 +58,9 @@ program
 
 program
   .command('export')
-  .description('Export all expenses to CSV file')
+  .description('Export expenses to CSV file')
   .option('--file <filename>', 'Filename to export to', 'expenses.csv')
-  .action((options) => exportToCSV(options.file));
+  .option('--month <month>', 'Filter by month (YYYY-MM)')
+  .action((options) => exportToCSV(options.file, options.month));
 
 program.parse(process.argv);
