@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 1,
+    "date": "2025-05-06",
+    "description": "launch",
+    "amount": 20
+  },
+  {
+    "id": 2,
+    "date": "2025-05-06",
+    "description": "kopi",
+    "amount": -5
+  }
+]
