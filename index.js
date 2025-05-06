@@ -7,6 +7,8 @@ const deleteExpense = require('./commands/delete');
 const updateExpense = require('./commands/update');
 const summary = require('./commands/summary');
 const { setBudget } = require('./budget');
+const exportToCSV = require('./commands/export');
+
 
 
 program
@@ -53,5 +55,11 @@ program
   .requiredOption('--month <month>', 'Month in YYYY-MM format')
   .requiredOption('--amount <amount>', 'Budget amount')
   .action((options) => setBudget(options.month, options.amount));
+
+program
+  .command('export')
+  .description('Export all expenses to CSV file')
+  .option('--file <filename>', 'Filename to export to', 'expenses.csv')
+  .action((options) => exportToCSV(options.file));
 
 program.parse(process.argv);

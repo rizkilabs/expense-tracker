@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = './data.json';
+const path = './expenses.json';
 
 function readData() {
   if (!fs.existsSync(path)) fs.writeFileSync(path, '[]');
