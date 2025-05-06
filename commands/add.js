@@ -23,17 +23,17 @@ function addExpense(description, amount, category = 'Uncategorized') {
   console.log(`Expense added successfully (ID: ${newExpense.id})`);
 
   // Cek apakah melebihi anggaran (jika ada)
-  const { getBudget } = require('../budget');
-  const monthKey = newExpense.date.slice(0, 7);
-  const budget = getBudget(monthKey);
-  if (budget) {
-    const monthlyTotal = expenses
-      .filter(e => e.date.startsWith(monthKey))
-      .reduce((sum, e) => sum + e.amount, 0);
-    if (monthlyTotal > budget) {
-      console.log(`⚠️  Warning: Monthly budget of $${budget} exceeded! Total: $${monthlyTotal}`);
-    }
-  }
+  // const { getBudget } = require('../budget');
+  // const monthKey = newExpense.date.slice(0, 7);
+  // const budget = getBudget(monthKey);
+  // if (budget) {
+  //   const monthlyTotal = expenses
+  //     .filter(e => e.date.startsWith(monthKey))
+  //     .reduce((sum, e) => sum + e.amount, 0);
+  //   if (monthlyTotal > budget) {
+  //     console.log(`⚠️  Warning: Monthly budget of $${budget} exceeded! Total: $${monthlyTotal}`);
+  //   }
+  // }
 }
 
 

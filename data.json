@@ -2,13 +2,22 @@
   {
     "id": 1,
     "date": "2025-05-06",
-    "description": "launch",
-    "amount": 20
+    "description": "Lunch",
+    "amount": 10,
+    "category": "Food"
   },
   {
     "id": 2,
     "date": "2025-05-06",
-    "description": "kopi",
-    "amount": -5
+    "description": "Lunch",
+    "amount": 10,
+    "category": "Food"
+  },
+  {
+    "id": 3,
+    "date": "2025-05-06",
+    "description": "Juice",
+    "amount": 5,
+    "category": "Drink"
   }
 ]

@@ -12,12 +12,18 @@ program
   .description('Add a new expense')
   .requiredOption('--description <desc>', 'Description')
   .requiredOption('--amount <amount>', 'Amount')
-  .action((options) => addExpense(options.description, options.amount));
+  .option('--category <cat>', 'Category')
+  .action((options) =>
+    addExpense(options.description, options.amount, options.category)
+  );
 
-program
+
+  program
   .command('list')
   .description('List all expenses')
-  .action(listExpenses);
+  .option('--category <cat>', 'Filter by category')
+  .action((options) => listExpenses(options.category));
+
 
 program
   .command('delete')
