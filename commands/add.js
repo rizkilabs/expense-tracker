@@ -1,7 +1,10 @@
 const { readData, writeData } = require('../utils');
+const { getBudget } = require('../budget');
+
 
 function addExpense(description, amount, category = 'Uncategorized') {
   const parsedAmount = parseFloat(amount);
+
 
   // Validasi jumlah
   if (isNaN(parsedAmount) || parsedAmount <= 0) {
@@ -23,18 +26,19 @@ function addExpense(description, amount, category = 'Uncategorized') {
   console.log(`Expense added successfully (ID: ${newExpense.id})`);
 
   // Cek apakah melebihi anggaran (jika ada)
-  // const { getBudget } = require('../budget');
-  // const monthKey = newExpense.date.slice(0, 7);
-  // const budget = getBudget(monthKey);
-  // if (budget) {
-  //   const monthlyTotal = expenses
-  //     .filter(e => e.date.startsWith(monthKey))
-  //     .reduce((sum, e) => sum + e.amount, 0);
-  //   if (monthlyTotal > budget) {
-  //     console.log(`⚠️  Warning: Monthly budget of $${budget} exceeded! Total: $${monthlyTotal}`);
-  //   }
-  // }
+  const monthKey = newExpense.date.slice(0, 7);
+  const budget = getBudget(monthKey);
+  if (budget) {
+    const monthlyTotal = expenses
+      .filter(e => e.date.startsWith(monthKey))
+      .reduce((sum, e) => sum + e.amount, 0);
+    if (monthlyTotal > budget) {
+      console.log(`⚠️  Warning: Monthly budget of $${budget} exceeded! Total: $${monthlyTotal}`);
+    }
+  }
 }
+
+
 
 
 module.exports = addExpense;

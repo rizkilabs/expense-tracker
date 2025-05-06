@@ -6,6 +6,8 @@ const listExpenses = require('./commands/list');
 const deleteExpense = require('./commands/delete');
 const updateExpense = require('./commands/update');
 const summary = require('./commands/summary');
+const { setBudget } = require('./budget');
+
 
 program
   .command('add')
@@ -18,7 +20,7 @@ program
   );
 
 
-  program
+program
   .command('list')
   .description('List all expenses')
   .option('--category <cat>', 'Filter by category')
@@ -44,5 +46,12 @@ program
   .description('Show summary of expenses')
   .option('--month <month>', 'Month (1-12)')
   .action((options) => summary(options.month));
+
+program
+  .command('budget')
+  .description('Set budget for a month (e.g. 2024-08)')
+  .requiredOption('--month <month>', 'Month in YYYY-MM format')
+  .requiredOption('--amount <amount>', 'Budget amount')
+  .action((options) => setBudget(options.month, options.amount));
 
 program.parse(process.argv);
