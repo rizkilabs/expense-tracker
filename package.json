@@ -11,5 +11,8 @@
   "description": "",
   "dependencies": {
     "commander": "^13.1.0"
+  },
+  "bin": {
+    "expense-tracker": "./index.js"
   }
 }
